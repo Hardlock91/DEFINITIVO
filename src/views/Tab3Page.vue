@@ -6,7 +6,6 @@
         <ion-buttons slot="end">
           <ion-button href="/tabs/tab1">Inicio</ion-button>
           <ion-button href="/tabs/tab2">Productos</ion-button>
-          <ion-button href="/tabs/tab3">Favoritos</ion-button>
           <ion-button href="/tabs/tab4">Carrito</ion-button>
           <ion-button href="/tabs/tab5">Ayuda</ion-button>
         </ion-buttons>

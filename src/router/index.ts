@@ -26,6 +26,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab3',
         component: () => import('@/views/Tab3Page.vue')
+      },
+      {
+        path: 'producto/:id', // Nueva ruta para los detalles del producto
+        component: () => import('@/views/Tab2Page.vue')
       }
     ]
   }
@@ -37,3 +41,5 @@ const router = createRouter({
 })
 
 export default router
+
+

@@ -1,14 +1,14 @@
 <template>
   <ion-page>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <ion-header class="bg-shakespeare-500 text-white">
       <ion-header>
       <ion-toolbar color="primary">
         <ion-buttons slot="end">
           <ion-button href="/tabs/tab1">Inicio</ion-button>
           <ion-button href="/tabs/tab2">Producto</ion-button>
-          <ion-button href="/tabs/tab3">Favorito</ion-button>
-          <ion-button href="/tabs/tab4">Carrito</ion-button>
-          <ion-button href="/tabs/tab5">Ayuda</ion-button>
+          <ion-button href="/tabs/tab3">Carrito</ion-button>
+          <ion-button href="/tabs/tab4">Ayuda</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
@@ -43,78 +43,91 @@
 
 
     
-          <ion-grid>
-            <ion-row>
-              <!-- Card 1 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <img src="https://via.placeholder.com/350x200" alt="Prime Video" class="w-full h-40 object-cover rounded-t-lg" />
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">Texto</h2>
-                    <p class="text-gray-500">Txto</p>
-                  </div>
+            <div class="grid grid-flow-row auto-rows-max gap-4">
+        <ion-row>
+          <!-- Card 1 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/1" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="Prime Video" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">Texto</h2>
+                  <p class="text-gray-500">Txto</p>
                 </div>
-              </ion-col>
+              </div>
+            </router-link>
+          </ion-col>
 
-              <!-- Card 2 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <div class="p-4 grid grid-cols-2 gap-4">
-                    <img src="https://via.placeholder.com/150" alt="Women's fashion" class="w-full h-24 object-cover rounded-md" />
-                    <img src="https://via.placeholder.com/150" alt="Men's fashion" class="w-full h-24 object-cover rounded-md" />
-                    <img src="https://via.placeholder.com/150" alt="Beauty" class="w-full h-24 object-cover rounded-md" />
-                    <img src="https://via.placeholder.com/150" alt="Home" class="w-full h-24 object-cover rounded-md" />
-                  </div>
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">TEXTO</h2>
-                    <p class="text-gray-500">TEXTO</p>
-                  </div>
+          <!-- Card 2 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/2" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-4 grid grid-cols-2 gap-2">
+                  <img src="https://via.placeholder.com/150" alt="Women's fashion" class="w-full h-24 object-cover rounded-md" />
+                  <img src="https://via.placeholder.com/150" alt="Men's fashion" class="w-full h-24 object-cover rounded-md" />
+                  <img src="https://via.placeholder.com/150" alt="Beauty" class="w-full h-24 object-cover rounded-md" />
+                  <img src="https://via.placeholder.com/150" alt="Home" class="w-full h-24 object-cover rounded-md" />
                 </div>
-              </ion-col>
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">TEXTO</h2>
+                  <p class="text-gray-500">TEXTO</p>
+                </div>
+              </div>
+            </router-link>
+          </ion-col>
 
-              <!-- Card 3 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <img src="https://via.placeholder.com/350x200" alt="Best Sellers" class="w-full h-40 object-cover rounded-t-lg" />
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">TEXTO</h2>
-                    <p class="text-blue-500">TEXTO</p>
-                  </div>
+          <!-- Card 3 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/3" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="B" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">TEXTO</h2>
+                  <p class="text-blue-500">TEXTO</p>
                 </div>
-              </ion-col>
+              </div>
+            </router-link>
+          </ion-col>
 
-              <!-- Card 4 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <img src="https://via.placeholder.com/350x200" alt="Amazon exclusive toys" class="w-full h-40 object-cover rounded-t-lg" />
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">TEXTO</h2>
-                    <p class="text-blue-500">TEXTO</p>
-                  </div>
+          <!-- Card 4 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/4" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="A" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">TEXTO</h2>
+                  <p class="text-blue-500">TEXTO</p>
                 </div>
-              </ion-col>
+              </div>
+            </router-link>
+          </ion-col>
 
-              <!-- Card 5 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <img src="https://via.placeholder.com/350x200" alt="Small space solutions" class="w-full h-40 object-cover rounded-t-lg" />
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">TEXTO</h2>
-                  </div>
+          <!-- Card 5 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/5" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="S" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">TEXTO</h2>
                 </div>
-              </ion-col>
+              </div>
+            </router-link>
+          </ion-col>
 
-              <!-- Card 6 -->
-              <ion-col size="12" size-md="6" size-lg="4">
-                <div class="bg-white shadow-md rounded-lg">
-                  <img src="https://via.placeholder.com/350x200" alt="Pre-owned devices" class="w-full h-40 object-cover rounded-t-lg" />
-                  <div class="p-4">
-                    <h2 class="text-lg font-semibold">TEXTO</h2>
-                  </div>
+          <!-- Card 6 -->
+          <ion-col size="12" size-md="6" size-lg="4">
+            <router-link to="/producto/6" class="block">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="P" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-lg font-semibold">TEXTO</h2>
                 </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+              </div>
+            </router-link>
+          </ion-col>
+        </ion-row>
+      </div>
+
         </ion-content>
   
 

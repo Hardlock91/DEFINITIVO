@@ -11,6 +11,9 @@
 
         <ion-tab-button tab="tab3" href="/tabs/tab3">
         </ion-tab-button>
+        
+        <ion-tab-button tab="tab4" href="/tabs/tab4">
+        </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
