@@ -1,0 +1,7 @@
+{
+  "name": "definitivo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

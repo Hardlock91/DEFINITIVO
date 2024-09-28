@@ -1,0 +1,59 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  :root {
+    --ion-color-shakespeare-50: #f0fafb;
+    --ion-color-shakespeare-100: #d9eff4;
+    --ion-color-shakespeare-200: #b7dfea;
+    --ion-color-shakespeare-300: #85c7db;
+    --ion-color-shakespeare-400: #4aa6c4;
+    --ion-color-shakespeare-500: #308aaa;
+    --ion-color-shakespeare-600: #2b718f;
+    --ion-color-shakespeare-700: #285c76;
+    --ion-color-shakespeare-800: #294e61;
+    --ion-color-shakespeare-900: #264253;
+    --ion-color-shakespeare-950: #142a38;
+  }
