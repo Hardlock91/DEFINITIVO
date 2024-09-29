@@ -1,131 +1,138 @@
 <template>
-    <ion-page>
-      <ion-content :fullscreen="true">
-        <ion-header collapse="condense">
-          <ion-toolbar>
-            <ion-title size="large">Tab 10</ion-title>
-          </ion-toolbar>
-        </ion-header>
-  
-        <ExploreContainer name="Tab 10page" />
-      
-      <IonTitle>
-        <h1>Secction of article </h1>
-        
-      </IonTitle>  
-      
-      
-              <div>
-            <ion-row>
-                <ion-col size="12" size-md="6" size-lg="4">
-            <router-link to="/tabs/tab10" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="P" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
-                </div>
-              </div>
-            </router-link>
-          </ion-col>
-            </ion-row>
+  <ion-page>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <ion-header class="bg-paua-500 text-white">
+      <ion-toolbar>
+        <ion-breadcrumbs>
+          <ion-breadcrumb href="/tabs/tab1" class="text-paua-900">
+            Home
+            <ion-icon slot="end" :icon="home"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab2" class="text-paua-900">
+            Products
+            <ion-icon slot="end" :icon="storefront"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab3" class="text-paua-900">
+            Favorits
+            <ion-icon slot="end" :icon="heart"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab4" class="text-paua-900">
+            Asist
+            <ion-icon slot="end" :icon="helpCircle"></ion-icon>
+          </ion-breadcrumb>
+        </ion-breadcrumbs>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar class="bg-paua-300">
+          <ion-title size="large" class="text-white">Tab 1</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <div id="app" class="flex items-center justify-center min-h-screen">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden w-2/3 max-w-4xl">
+          <swiper :slides-per-view="1" space-between="10" class="p-8">
+            <swiper-slide>
+              <img src="https://via.placeholder.com/350x200" alt="Women's fashion" class="w-full h-32 object-cover rounded-md" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="https://via.placeholder.com/350x200" alt="Men's fashion" class="w-full h-32 object-cover rounded-md" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="https://via.placeholder.com/350x200" alt="Beauty" class="w-full h-32 object-cover rounded-md" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="https://via.placeholder.com/350x200" alt="Home" class="w-full h-32 object-cover rounded-md" />
+            </swiper-slide>
+          </swiper>
+          <div class="p-8 text-center bg-paua-100">
+            <h2 class="text-2xl font-semibold text-paua-600">DESCRIPTION</h2>
+            <p class="text-gray-500 text-lg">PRICE</p>
           </div>
-        </ion-content>
-    </ion-page>
-  </template>
+          <div class="p-8 text-center">
+            <button @click="addToCart" class="bg-paua-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-paua-600">
+              Agregar al Carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-page>
+</template>
+
+
   
   <script setup lang="ts">
-    // Importaciones de Ionic y otros componentes
-    import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/vue';
-    import ExploreContainer from '@/components/ExploreContainer.vue';
+  // Importaciones de Ionic y otros componentes
+  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
+  import ExploreContainer from '@/components/ExploreContainer.vue';
   
-    // Importaciones de Swiper
-    import { Swiper, SwiperSlide } from 'swiper/vue';
-    import 'swiper/css';
-    import 'swiper/css/navigation';
-    import { Navigation } from 'swiper/modules';
-    const modules = [Navigation];
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import 'swiper/css';
+  import 'swiper/css/effect-coverflow';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
   
-    // Iconos de Ionicons
-    import { bag, film, flash, help, home, storefront } from 'ionicons/icons';
-  
-    // Setup para exportar iconos
-    const icons = { bag, film, flash, home };
+  // Import required modules
+  import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { heart, helpCircle, home, storefront } from 'ionicons/icons';
+  // Setup para exportar iconos y módulos
+  const modules = [EffectCoverflow, Navigation, Pagination];
   </script>
   
-
   <style>
-#app {
-  height: 100%;
-}
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper-box {
-  background-color: #fff; /* Fondo blanco para la caja */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  padding: 16px; /* Espaciado interno */
-  margin: 16px; /* Margen alrededor de la caja */
-  position: relative; /* Necesario para posicionar elementos dentro de la caja */
-}
-
-.swiper {
-  width: 100%;
-  height: 200px; /* Altura del Swiper */
-  position: sticky; /* Mantiene el Swiper "fijo" dentro de su contenedor */
-  top: 0; /* Mantén el Swiper en la parte superior */
-  z-index: 10; /* Asegura que el Swiper esté por encima de otros elementos */
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta la imagen para cubrir el área del slide */
-  object-position: center; /* Centra la imagen en el slide */
-}
-
-/*ion cards aca*/
-/* global.scss o el archivo de estilos de tu componente */
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-ion-card {
-  height: 100%;
-  display: flex; /* Permite al contenido ocupar todo el espacio */
-  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-  height: calc((100% - 30px) / 2) !important;
-}
-
-
-</style>
+  #app {
+    height: 100%;
+  }
+  
+  html,
+  body {
+    position: relative;
+    height: 100%;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 300px; /* Altura del Swiper */
+    position: relative;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex; /* Permite centrar el contenido */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el área del slide */
+    object-position: center; /* Centra la imagen en el slide */
+  }
+  
+  ion-card {
+    height: calc((60% - 30px) / 2) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  </style>
+  

@@ -1,66 +1,73 @@
 <template>
   <ion-page>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <ion-header class="bg-shakespeare-500 text-white">
-      <ion-header>
-        <ion-label class="ion-margin-top">Icons at End</ion-label>
-  <ion-breadcrumbs>
-    <ion-breadcrumb href="/tabs/tab1">
-      Home
-      <ion-icon slot="end" :icon="home"></ion-icon>
-    </ion-breadcrumb>
-    <ion-breadcrumb href="/tabs/tab2">
-      Products
-      <ion-icon slot="end" :icon="storefront"></ion-icon>
-    </ion-breadcrumb>
-    <ion-breadcrumb href="/tabs/tab3">
-      favorits
-      <ion-icon slot="end" :icon="bag"></ion-icon>
-    </ion-breadcrumb>
-    <ion-breadcrumb href="/tabs/tab4">
-      Asist
-      <ion-icon slot="end" :icon="help"></ion-icon>
-    </ion-breadcrumb>
-  </ion-breadcrumbs>
+
+    <!-- Cabecera principal con color de fondo y texto -->
+    <ion-header class="bg-paua-500 text-white">
+      <ion-toolbar>
+        <ion-breadcrumbs>
+          <ion-breadcrumb href="/tabs/tab1" class="text-paua-900">
+            Home
+            <ion-icon slot="end" :icon="home"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab2" class="text-paua-900">
+            Products
+            <ion-icon slot="end" :icon="storefront"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab3" class="text-paua-900">
+            Favorits
+            <ion-icon slot="end" :icon="bag"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb href="/tabs/tab4" class="text-paua-900">
+            Asist
+            <ion-icon slot="end" :icon="help"></ion-icon>
+          </ion-breadcrumb>
+        </ion-breadcrumbs>
+      </ion-toolbar>
     </ion-header>
-    
-    </ion-header>
+
     <ion-content :fullscreen="true">
+      <!-- Toolbar del Tab con color de fondo y texto -->
       <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 1</ion-title>
+        <ion-toolbar class="bg-paua-300">
+          <ion-title size="large" class="text-white">Tab 1</ion-title>
         </ion-toolbar>
       </ion-header>
 
-      <ion-searchbar value="Value"></ion-searchbar>
+      <!-- Barra de búsqueda con fondo color Paua-200 -->
+      <ion-searchbar value="Value" class="bg-paua-200"></ion-searchbar>
 
       <!-- Caja del Swiper -->
       <div class="swiper-box">
         <swiper :navigation="true" :modules="modules" class="mySwiper">
           <swiper-slide>
-            <img src="" alt="Slide 1" />
+            <img src="https://via.placeholder.com/350x200" alt="Slide 1" class="hover-effect" />
           </swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          <swiper-slide>Slide 4</swiper-slide>
-          <swiper-slide>Slide 5</swiper-slide>
-          
+          <swiper-slide>
+            <img src="https://via.placeholder.com/350x200" alt="Slide 2" class="hover-effect" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="https://via.placeholder.com/350x200" alt="Slide 3" class="hover-effect" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="https://via.placeholder.com/350x200" alt="Slide 4" class="hover-effect" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="https://via.placeholder.com/350x200" alt="Slide 5" class="hover-effect" />
+          </swiper-slide>
         </swiper>
       </div>
-    
 
-
-    
-            <div class="grid grid-flow-row auto-rows-max gap-4">
+      <div class="grid grid-flow-row auto-rows-max gap-4">
         <ion-row>
           <!-- Card 1 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab5" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="Prime Video" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">Texto</h2>
-                  <p class="text-gray-500">Txto</p>
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="Prime Video" class="w-full h-40 object-cover hover-effect" />
+                <div class="p-4 bg-paua-100">
+                  <h2 class="text-lg font-semibold text-paua-700">Texto</h2>
+                  <p class="text-paua-900">Txto</p>
                 </div>
               </div>
             </router-link>
@@ -69,16 +76,16 @@
           <!-- Card 2 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab6" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <div class="p-4 grid grid-cols-2 gap-2">
-                  <img src="https://via.placeholder.com/150" alt="Women's fashion" class="w-full h-24 object-cover rounded-md" />
-                  <img src="https://via.placeholder.com/150" alt="Men's fashion" class="w-full h-24 object-cover rounded-md" />
-                  <img src="https://via.placeholder.com/150" alt="Beauty" class="w-full h-24 object-cover rounded-md" />
-                  <img src="https://via.placeholder.com/150" alt="Home" class="w-full h-24 object-cover rounded-md" />
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <div class="p-4 grid grid-cols-2 gap-2 bg-paua-100">
+                  <img src="https://via.placeholder.com/150" alt="Women's fashion" class="w-full h-24 object-cover rounded-md hover-effect" />
+                  <img src="https://via.placeholder.com/150" alt="Men's fashion" class="w-full h-24 object-cover rounded-md hover-effect" />
+                  <img src="https://via.placeholder.com/150" alt="Beauty" class="w-full h-24 object-cover rounded-md hover-effect" />
+                  <img src="https://via.placeholder.com/150" alt="Home" class="w-full h-24 object-cover rounded-md hover-effect" />
                 </div>
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
-                  <p class="text-gray-500">TEXTO</p>
+                <div class="p-4 bg-paua-200">
+                  <h2 class="text-lg font-semibold text-paua-700">TEXTO</h2>
+                  <p class="text-paua-900">TEXTO</p>
                 </div>
               </div>
             </router-link>
@@ -87,11 +94,11 @@
           <!-- Card 3 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab7" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="B" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
-                  <p class="text-blue-500">TEXTO</p>
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="B" class="w-full h-40 object-cover hover-effect" />
+                <div class="p-4 bg-paua-300">
+                  <h2 class="text-lg font-semibold text-paua-700">TEXTO</h2>
+                  <p class="text-paua-900">TEXTO</p>
                 </div>
               </div>
             </router-link>
@@ -100,11 +107,11 @@
           <!-- Card 4 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab8" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="A" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
-                  <p class="text-blue-500">TEXTO</p>
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="A" class="w-full h-40 object-cover hover-effect" />
+                <div class="p-4 bg-paua-400">
+                  <h2 class="text-lg font-semibold text-white">TEXTO</h2>
+                  <p class="text-paua-900">TEXTO</p>
                 </div>
               </div>
             </router-link>
@@ -113,10 +120,10 @@
           <!-- Card 5 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab9" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="S" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="S" class="w-full h-40 object-cover hover-effect" />
+                <div class="p-4 bg-paua-600">
+                  <h2 class="text-lg font-semibold text-white">TEXTO</h2>
                 </div>
               </div>
             </router-link>
@@ -125,25 +132,21 @@
           <!-- Card 6 -->
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab10" class="block">
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="P" class="w-full h-40 object-cover" />
-                <div class="p-4">
-                  <h2 class="text-lg font-semibold">TEXTO</h2>
+              <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/350x200" alt="P" class="w-full h-40 object-cover hover-effect" />
+                <div class="p-4 bg-paua-600">
+                  <h2 class="text-lg font-semibold text-white">TEXTO</h2>
                 </div>
               </div>
             </router-link>
           </ion-col>
         </ion-row>
       </div>
-
-        </ion-content>
-  
-
-
-
-
+    </ion-content>
   </ion-page>
 </template>
+
+
 
 
 
@@ -276,6 +279,13 @@ ion-card {
   flex-direction: column; /* Asegura que el contenido se apile verticalmente */
   height: calc((100% - 30px) / 2) !important;
 }
+.hover-effect {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.hover-effect:hover {
+  transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar el cursor */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra para dar un efecto de elevación */
+}
 
 </style>
