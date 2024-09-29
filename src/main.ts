@@ -5,6 +5,11 @@ import router from './router';
 import { IonicVue } from '@ionic/vue';
 
 //componentes
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cube';  // Asegúrate de que esta línea esté presente
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 
 /* Core CSS required for Ionic components to work properly */
