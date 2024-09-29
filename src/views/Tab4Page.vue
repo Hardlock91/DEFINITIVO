@@ -2,14 +2,25 @@
     <ion-page>
       <ion-header class="bg-shakespeare-500 text-white">
         <ion-header>
-        <ion-toolbar color="primary">
-          <ion-buttons slot="end">
-            <ion-button href="/tabs/tab1">Inicio</ion-button>
-            <ion-button href="/tabs/tab2">Productos</ion-button>
-            <ion-button href="/tabs/tab4">Carrito</ion-button>
-            <ion-button href="/tabs/tab5">Ayuda</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
+          <ion-label class="ion-margin-top">Icons at End</ion-label>
+    <ion-breadcrumbs>
+      <ion-breadcrumb href="/tabs/tab1">
+        Home
+        <ion-icon slot="end" :icon="home"></ion-icon>
+      </ion-breadcrumb>
+      <ion-breadcrumb href="/tabs/tab2">
+        Products
+        <ion-icon slot="end" :icon="storefront"></ion-icon>
+      </ion-breadcrumb>
+      <ion-breadcrumb href="/tabs/tab3">
+        favorits
+        <ion-icon slot="end" :icon="bag"></ion-icon>
+      </ion-breadcrumb>
+      <ion-breadcrumb href="/tabs/tab4">
+        Asist
+        <ion-icon slot="end" :icon="help"></ion-icon>
+      </ion-breadcrumb>
+    </ion-breadcrumbs>
       </ion-header>
       
       </ion-header>
@@ -20,12 +31,28 @@
           </ion-toolbar>
         </ion-header>
   
-        <ExploreContainer name="Tab 3 page" />
+        <ExploreContainer name="Tab 4 page" />
       </ion-content>
     </ion-page>
   </template>
   
   <script setup lang="ts">
-  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-  import ExploreContainer from '@/components/ExploreContainer.vue';
+    // Importaciones de Ionic y otros componentes
+    import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/vue';
+    import ExploreContainer from '@/components/ExploreContainer.vue';
+  
+    // Importaciones de Swiper
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import { Navigation } from 'swiper/modules';
+    const modules = [Navigation];
+  
+    // Iconos de Ionicons
+    import { bag, film, flash, help, home, storefront } from 'ionicons/icons';
+  
+    // Setup para exportar iconos
+    const icons = { bag, film, flash, home };
   </script>
+  
+  

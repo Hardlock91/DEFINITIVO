@@ -28,9 +28,38 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3Page.vue')
       },
       {
-        path: 'producto/:id', // Nueva ruta para los detalles del producto
-        component: () => import('@/views/Tab2Page.vue')
-      }
+        path: 'tab4',
+        component: () => import('@/views/Tab4Page.vue')
+      },
+      {
+        path: 'tab5',
+        component: () => import('@/views/Tab5Page.vue')
+      },
+      {
+        path: 'tab6',
+        component: () => import('@/views/Tab6Page.vue')
+      },
+      {
+        path: 'tab7',
+        component: () => import('@/views/Tab7page.vue')
+      },
+      {
+        path: 'tab8',
+        component: () => import('@/views/Tab8Page.vue')
+      },
+      {
+        path: 'tab9',
+        component: () => import('@/views/Tab9page.vue')
+      },
+      {
+        path: 'tab10',
+        component: () => import('@/views/Tab10Page.vue')
+      },
+      {
+        path: 'tab11',
+        component: () => import('@/views/Tab11Page.vue')
+      },
+      
     ]
   }
 ]
