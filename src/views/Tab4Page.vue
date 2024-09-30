@@ -27,6 +27,10 @@
 
       <ion-content :fullscreen="true">
         <div class="ion-padding">
+          <ion-chip v-if="showChip" color="success">
+            <ion-label>Enviado con éxito</ion-label>
+          </ion-chip>
+
           <form @submit.prevent="submitForm">
             <ion-item>
               <ion-label position="floating">Nombre</ion-label>
@@ -53,7 +57,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'; 
-import { IonMenuButton, IonList, IonItem, IonTextarea, IonButton, IonInput } from '@ionic/vue';
+import { IonMenuButton, IonList, IonItem, IonTextarea, IonButton, IonInput, IonChip, IonLabel } from '@ionic/vue';
 
 const formData = ref({
   name: '',
@@ -61,9 +65,15 @@ const formData = ref({
   message: ''
 });
 
+const showChip = ref(false); // Estado para mostrar el chip
+
 const submitForm = () => {
   alert("Enviado con éxito");
   formData.value = { name: '', email: '', message: '' }; // Reinicia el formulario
+  showChip.value = true; // Muestra el chip
+  setTimeout(() => {
+    showChip.value = false; // Oculta el chip después de 2 segundos
+  }, 2000);
 };
 
 const logout = () => {
