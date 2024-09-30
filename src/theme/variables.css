@@ -127,19 +127,3 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-dark-tint: #444444;
 
 }
-
-custom-background{
-  background: rgba( 79, 153, 242, 0.15 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 10.5px );
--webkit-backdrop-filter: blur( 10.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
-
-
-.custom-background {
-  background: url('ruta/a/tu/imagen.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-}

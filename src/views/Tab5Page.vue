@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <ion-header class="bg-paua-500 text-white">
       <ion-toolbar>
-        <ion-breadcrumbs>
+        <ion-breadcrumbs slot="end">
           <ion-breadcrumb href="/tabs/tab1" class="text-paua-900">
             Home
             <ion-icon slot="end" :icon="home"></ion-icon>
@@ -35,24 +35,24 @@
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-2/3 max-w-4xl">
           <swiper :slides-per-view="1" space-between="10" class="p-8">
             <swiper-slide>
-              <img src="https://via.placeholder.com/350x200" alt="Women's fashion" class="w-full h-32 object-cover rounded-md" />
+              <img src="/src/imagenes/silla.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
             </swiper-slide>
             <swiper-slide>
-              <img src="https://via.placeholder.com/350x200" alt="Men's fashion" class="w-full h-32 object-cover rounded-md" />
+              <img src="/src/imagenes/silla.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
             </swiper-slide>
             <swiper-slide>
-              <img src="https://via.placeholder.com/350x200" alt="Beauty" class="w-full h-32 object-cover rounded-md" />
+              <img src="/src/imagenes/silla.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
             </swiper-slide>
             <swiper-slide>
-              <img src="https://via.placeholder.com/350x200" alt="Home" class="w-full h-32 object-cover rounded-md" />
+              <img src="/src/imagenes/silla.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
             </swiper-slide>
           </swiper>
           <div class="p-8 text-center bg-paua-100">
-            <h2 class="text-2xl font-semibold text-paua-600">DESCRIPTION</h2>
-            <p class="text-gray-500 text-lg">PRICE</p>
+            <h2 class="text-2xl font-semibold text-paua-600">Silla Gamer</h2>
+            <p class="text-gray-500 text-lg">US130</p>
           </div>
           <div class="p-8 text-center">
-            <button @click="addToCart" class="bg-paua-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-paua-600">
+            <button @click="addtocart" class="bg-paua-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-paua-600">
               Agregar al Carrito
             </button>
           </div>
@@ -76,11 +76,16 @@
   import 'swiper/css/navigation';
   import 'swiper/css/pagination';
   
+
   // Import required modules
   import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { heart, helpCircle, home, storefront } from 'ionicons/icons';
   // Setup para exportar iconos y módulos
   const modules = [EffectCoverflow, Navigation, Pagination];
+  const addtocart = () => {
+  // Lógica para agregar al carrito
+  console.log("Producto agregado al carrito");
+};
   </script>
   
   <style>

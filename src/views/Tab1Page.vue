@@ -5,7 +5,7 @@
     <!-- Cabecera principal con color de fondo y texto -->
     <ion-header class="bg-paua-500 text-white">
       <ion-toolbar>
-        <ion-breadcrumbs>
+        <ion-breadcrumbs slot="end">
           <ion-breadcrumb href="/tabs/tab1" class="text-paua-900">
             Home
             <ion-icon slot="end" :icon="home"></ion-icon>
@@ -14,13 +14,14 @@
             Products
             <ion-icon slot="end" :icon="storefront"></ion-icon>
           </ion-breadcrumb>
-          <ion-breadcrumb href="/tabs/tab3" class="text-paua-900">
-            Favorits
-            <ion-icon slot="end" :icon="bag"></ion-icon>
+          <ion-breadcrumb href="/tabs/tab-cart" class="text-paua-900">
+            Cart
+            <ion-icon slot="end" :icon="cart"></ion-icon>
           </ion-breadcrumb>
+
           <ion-breadcrumb href="/tabs/tab4" class="text-paua-900">
-            Asist
-            <ion-icon slot="end" :icon="help"></ion-icon>
+            Contact
+            <ion-icon slot="end" :icon="call"></ion-icon>
           </ion-breadcrumb>
         </ion-breadcrumbs>
       </ion-toolbar>
@@ -34,26 +35,67 @@
         </ion-toolbar>
       </ion-header>
 
-      <!-- Barra de búsqueda con fondo color Paua-200 -->
+      <ion-toolbar class="bg-paua-300 text-white">
+        <ion-buttons slot="start">
+          <ion-segment v-model="selectedSegment" class="bg-paua-200">
+            <ion-segment-button value="computacion" class="hover:bg-paua-400">
+              <ion-label>Computación</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="gaming" class="hover:bg-paua-400">
+              <ion-label>Gaming y Streaming</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="componentes" class="hover:bg-paua-400">
+              <ion-label>Componentes</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="audio" class="hover:bg-paua-400">
+              <ion-label>Audio y Video</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="conectividad" class="hover:bg-paua-400">
+              <ion-label>Conectividad y Redes</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="hogar" class="hover:bg-paua-400">
+              <ion-label>Hogar y Oficina</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="otras" class="hover:bg-paua-400">
+              <ion-label>Otras Categorías</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-buttons>
+      </ion-toolbar>
+
+      <div v-if="selectedSegment === 'computacion'" class="bg-paua-50 p-4">
+        <ul>
+          <li><router-link to="/tabs/tab2" class="text-paua-700 hover:text-paua-500">Computadora 1</router-link></li>
+          <li><router-link to="/tabs/tab2" class="text-paua-700 hover:text-paua-500">Computadora 2</router-link></li>
+          <li><router-link to="/tabs/tab2" class="text-paua-700 hover:text-paua-500">Computadora 3</router-link></li>
+        </ul>
+      </div>
+
+  
       <ion-searchbar value="Value" class="bg-paua-200"></ion-searchbar>
+
+            <h1 class="text-2xl font-semibold text-center text-paua-600 py-2 flex items-center justify-center">
+              Productos Destacados
+            </h1>
+     
 
       <!-- Caja del Swiper -->
       <div class="swiper-box">
         <swiper :navigation="true" :modules="modules" class="mySwiper">
           <swiper-slide>
-            <img src="https://via.placeholder.com/350x200" alt="Slide 1" class="hover-effect" />
+            <img src="/src/imagenes/sillasg.jpg" alt="Slide 1" class="hover-effect" style="width: 400%; height: 100%;object-fit: fill;" />
           </swiper-slide>
           <swiper-slide>
-            <img src="https://via.placeholder.com/350x200" alt="Slide 2" class="hover-effect" />
+            <img src="/src/imagenes/razer.jpg" alt="Slide 1" class="hover-effect" style="width: 400%; height: 100%;object-fit: fill;" />
           </swiper-slide>
           <swiper-slide>
-            <img src="https://via.placeholder.com/350x200" alt="Slide 3" class="hover-effect" />
+            <img src="/src/imagenes/propaganda.jpg" alt="Slide 1" class="hover-effect" style="width: 400%; height: 100%;object-fit: fill;" />
           </swiper-slide>
           <swiper-slide>
-            <img src="https://via.placeholder.com/350x200" alt="Slide 4" class="hover-effect" />
+            <img src="/src/imagenes/propaganda1.jpg" alt="Slide 1" class="hover-effect" style="width: 400%; height: 100%;object-fit: fill;" />
           </swiper-slide>
           <swiper-slide>
-            <img src="https://via.placeholder.com/350x200" alt="Slide 5" class="hover-effect" />
+            <img src="/src/imagenes/graficas.jpg" alt="Slide 1" class="hover-effect" style="width: 400%; height: 100%;object-fit: fill;" />
           </swiper-slide>
         </swiper>
       </div>
@@ -64,10 +106,10 @@
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab5" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="Prime Video" class="w-full h-40 object-cover hover-effect" />
+                <img src="/src/imagenes/silla.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
                 <div class="p-4 bg-paua-100">
-                  <h2 class="text-lg font-semibold text-paua-700">Texto</h2>
-                  <p class="text-paua-900">Txto</p>
+                  <h2 class="text-lg font-semibold text-paua-700">Silla Gamer</h2>
+                  <p class="text-paua-900">US130</p>
                 </div>
               </div>
             </router-link>
@@ -78,14 +120,14 @@
             <router-link to="/tabs/tab6" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
                 <div class="p-4 grid grid-cols-2 gap-2 bg-paua-100">
-                  <img src="https://via.placeholder.com/150" alt="Women's fashion" class="w-full h-24 object-cover rounded-md hover-effect" />
-                  <img src="https://via.placeholder.com/150" alt="Men's fashion" class="w-full h-24 object-cover rounded-md hover-effect" />
-                  <img src="https://via.placeholder.com/150" alt="Beauty" class="w-full h-24 object-cover rounded-md hover-effect" />
-                  <img src="https://via.placeholder.com/150" alt="Home" class="w-full h-24 object-cover rounded-md hover-effect" />
+                  <img src="/src/imagenes/mouse.jpg" alt="Slide 1" class="hover-effect" style="width: 1000px; height: 200px;object-fit: fill;" />
+                  <img src="/src/imagenes/audifonos.jpg" alt="Slide 1" class="hover-effect" style="width: 1000px; height: 200px;object-fit: fill;" />
+                  <img src="/src/imagenes/teclado.jpg" alt="Slide 1" class="hover-effect" style="width: 1000px; height: 200px;object-fit: fill;" />
+                  <img src="/src/imagenes/mousepag1.jpg" alt="Slide 1" class="hover-effect" style="width: 1000px; height: 200px;object-fit: fill;" />
                 </div>
                 <div class="p-4 bg-paua-200">
-                  <h2 class="text-lg font-semibold text-paua-700">TEXTO</h2>
-                  <p class="text-paua-900">TEXTO</p>
+                  <h2 class="text-lg font-semibold text-paua-700">Pack Of Peripherals</h2>
+                  <p class="text-paua-900">US180</p>
                 </div>
               </div>
             </router-link>
@@ -95,10 +137,10 @@
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab7" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="B" class="w-full h-40 object-cover hover-effect" />
+                <img src="/src/imagenes/mouselog.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 200px; height: 400px; display: block; margin: 0 auto;" />
                 <div class="p-4 bg-paua-300">
-                  <h2 class="text-lg font-semibold text-paua-700">TEXTO</h2>
-                  <p class="text-paua-900">TEXTO</p>
+                  <h2 class="text-lg font-semibold text-paua-700">Mouse Gamer</h2>
+                  <p class="text-paua-900">US180</p>
                 </div>
               </div>
             </router-link>
@@ -108,7 +150,7 @@
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab8" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="A" class="w-full h-40 object-cover hover-effect" />
+                <img src="/src/imagenes/monitor.png" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 500px; height: 400px; display: block; margin: 0 auto;" />
                 <div class="p-4 bg-paua-400">
                   <h2 class="text-lg font-semibold text-white">TEXTO</h2>
                   <p class="text-paua-900">TEXTO</p>
@@ -121,8 +163,8 @@
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab9" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="S" class="w-full h-40 object-cover hover-effect" />
-                <div class="p-4 bg-paua-600">
+                <img src="/src/imagenes/ssd.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 500px; height: 400px; display: block; margin: 0 auto;" />
+                <div class="p-4 bg-paua-">
                   <h2 class="text-lg font-semibold text-white">TEXTO</h2>
                 </div>
               </div>
@@ -133,7 +175,7 @@
           <ion-col size="12" size-md="6" size-lg="4">
             <router-link to="/tabs/tab10" class="block">
               <div class="bg-paua-50 shadow-md rounded-lg overflow-hidden">
-                <img src="https://via.placeholder.com/350x200" alt="P" class="w-full h-40 object-cover hover-effect" />
+                <img src="/src/imagenes/teclado.jpg" alt="Prime Video" width="350" height="350" class="object-cover hover-effect" style="width: 500px; height: 400px; display: block; margin: 0 auto;object-fit: fill;" />
                 <div class="p-4 bg-paua-600">
                   <h2 class="text-lg font-semibold text-white">TEXTO</h2>
                 </div>
@@ -147,62 +189,18 @@
 </template>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script setup lang="ts">
-  // Importaciones de Ionic y otros componentes
-  import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/vue';
-  import ExploreContainer from '@/components/ExploreContainer.vue';
+import { ref } from 'vue'; 
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import { bag, home, storefront, help, cart, contractOutline, callOutline, call } from 'ionicons/icons';
 
-  // Importaciones de Swiper
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import { Navigation } from 'swiper/modules';
-  const modules = [Navigation];
-
-  // Iconos de Ionicons
-  import { bag, film, flash, help, home, storefront } from 'ionicons/icons';
-
-  // Setup para exportar iconos
-  const icons = { bag, film, flash, home };
+const modules = [Navigation];
+const selectedSegment = ref('computacion'); 
 </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -232,6 +230,7 @@ body {
   padding: 16px; /* Espaciado interno */
   margin: 16px; /* Margen alrededor de la caja */
   position: relative; /* Necesario para posicionar elementos dentro de la caja */
+
 }
 
 .swiper {
@@ -287,5 +286,7 @@ ion-card {
   transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar el cursor */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra para dar un efecto de elevación */
 }
-
+.ion-segment-button {
+  transition: background-color 0.3s ease;
+}
 </style>

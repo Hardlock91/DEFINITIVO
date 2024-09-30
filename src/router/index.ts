@@ -56,10 +56,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab10Page.vue')
       },
       {
-        path: 'tab11',
-        component: () => import('@/views/Tab11Page.vue')
-      },
-      
+        path: 'tab-cart',  // Nueva ruta para el carrito
+        component: () => import('@/views/Cart.vue')  // Importamos el componente del carrito
+      }
     ]
   }
 ]
@@ -69,6 +68,6 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
 
 
